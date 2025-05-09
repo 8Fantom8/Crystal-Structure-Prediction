@@ -4,21 +4,21 @@ A collection of pipelines and models for extracting structural data from CIF fil
 
 Project Structure
 
-├── data_preprocessing/           # Scripts and notebooks for parsing CIFs and generating feature CSVs
-├── data_augmentation/            # Notebooks for creating augmented structural datasets
-├── data_visualization/           # Notebooks for exploratory visualization of features
-├── modeling_initial/             # Initial modeling with classical ML algorithms
-├── dl_model_1/                   # Deep Learning Model 1: Space group classification (MLP)
-├── dl_model_2/                   # Deep Learning Model 2: Advanced MLP classifier
-├── dl_model_2_volume/            # Deep Learning Model 2: Volume regression (TabNet)
-├── dl_model_3/                   # Deep Learning Model 3: Composition-based symmetry (CRYSPNet-inspired)
-├── Models/                       # Saved model weights, organized by model folder
-│   ├── model_1/                  # Weights and artifacts from DL Model 1
-│   ├── model_2/                  # Weights and artifacts from DL Model 2
-│   ├── model_2_volume/           # Weights and artifacts from volume regressor
-│   └── model_3/                  # Weights and artifacts from DL Model 3
-├── requirements.txt              # Python dependencies
-└── README.md                     # This file
+├── data_preprocessing/           # Scripts and notebooks for parsing CIFs and generating feature CSVs/
+├── data_augmentation/            # Notebooks for creating augmented structural datasets/
+├── data_visualization/           # Notebooks for exploratory visualization of features/
+├── modeling_initial/             # Initial modeling with classical ML algorithms/
+├── dl_model_1/                   # Deep Learning Model 1: Space group classification (MLP)/
+├── dl_model_2/                   # Deep Learning Model 2: Advanced MLP classifier/
+├── dl_model_2_volume/            # Deep Learning Model 2: Composition-based symmetry (CRYSPNet-inspired)/
+├── dl_model_3/                   # Deep Learning Model 3: Volume regression (TabNet)/
+├── Models/                       # Saved model weights, organized by model folder/
+│   ├── model_1/                  # Weights and artifacts from DL Model 1/
+│   ├── model_2/                  # Weights and artifacts from DL Model 2/
+│   ├── model_2_volume/           # Weights and artifacts from volume regressor/
+│   └── model_3/                  # Weights and artifacts from DL Model 3/
+├── requirements.txt              # Python dependencies/
+└── README.md               
 
 Pipeline Overview
 
