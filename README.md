@@ -49,7 +49,7 @@ This project implements a full pipeline for extracting crystallographic features
   pip install -r requirements.txt
   ```
 
-##Follow pipeline order:
+### Follow pipeline order:
 
 ### 1) Data preprocessing
 cd data_preprocessing && jupyter lab preprocessing.ipynb
