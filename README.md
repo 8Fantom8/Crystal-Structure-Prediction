@@ -1,4 +1,7 @@
 # Crystal Structure Prediction and Volume Regression Project
+## Colobarators
+- Leonid Sarkisyan
+- Alex Hayrapetyan(Supervisor)
 
 ## Introduction
 This project implements a full pipeline for extracting crystallographic features from CIF files, visualizing data, and training both classical and deep learning models to predict space group symmetry and unit cell volume.
@@ -67,3 +70,9 @@ cd ../modeling_initial && jupyter lab modeling.ipynb
 #### dl_model_1 → dl_model_2 → dl_model_2_volume → dl_model_3
 
 After each training run, check the corresponding Models/model_* folder for saved weights.
+
+
+Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for bug fixes or feature requests.
+
