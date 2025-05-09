@@ -1,93 +1,68 @@
-# Crystal-Structure-Prediction
-A collection of pipelines and models for extracting structural data from CIF files, visualizing features, and predicting crystallographic properties (space group symmetry and unit cell volume) using machine learning and deep learning approaches.
+# Crystal Structure Prediction and Volume Regression Project
 
+## Introduction
+This project implements a full pipeline for extracting crystallographic features from CIF files, visualizing data, and training both classical and deep learning models to predict space group symmetry and unit cell volume.
 
-Project Structure
+## Pipeline Steps
+1) **Data Preprocessing**
+2) **Data Augmentation**
+3) **Data Visualization**
+4) **Initial Modeling**
+5) **DL Model 1**
+6) **DL Model 2**
+7) **DL Model 2 (Volume Regression)**
+8) **DL Model 3**
 
-├── data_preprocessing/           # Scripts and notebooks for parsing CIFs and generating feature CSVs/
-├── data_augmentation/            # Notebooks for creating augmented structural datasets/
-├── data_visualization/           # Notebooks for exploratory visualization of features/
-├── modeling_initial/             # Initial modeling with classical ML algorithms/
-├── dl_model_1/                   # Deep Learning Model 1: Space group classification (MLP)/
-├── dl_model_2/                   # Deep Learning Model 2: Advanced MLP classifier/
-├── dl_model_2_volume/            # Deep Learning Model 2: Composition-based symmetry (CRYSPNet-inspired)/
-├── dl_model_3/                   # Deep Learning Model 3: Volume regression (TabNet)/
-├── Models/                       # Saved model weights, organized by model folder/
-│   ├── model_1/                  # Weights and artifacts from DL Model 1/
-│   ├── model_2/                  # Weights and artifacts from DL Model 2/
-│   ├── model_2_volume/           # Weights and artifacts from volume regressor/
-│   └── model_3/                  # Weights and artifacts from DL Model 3/
-├── requirements.txt              # Python dependencies/
-└── README.md               
+## Files and Directories
+- **data_preprocessing/**: Scripts/notebooks to parse CIF links and extract features (unit cell parameters, angles, volume, atomic positions, formula).
+- **data_augmentation/**: Notebooks for augmenting structural feature sets (lattice distortions, noise injection).
+- **data_visualization/**: Notebooks for plotting histograms, scatter plots, heatmaps, and KDEs.
+- **modeling_initial/**: Classical ML pipelines (Decision Trees, Random Forests, SVM) with baseline metrics.
+- **dl_model_1/**: MLP classifier for space group prediction; saves weights under `Models/model_1/`.
+- **dl_model_2/**: Composition-based symmetry network (CRYSPNet-style); saves weights under`Models/model_2/`.
+- **dl_model_2_volume/**: Deep Feedforward Volume Regression; saves weights under `Models/model_2_volume/`.
+- **dl_model_3/**:  TabNet/MLP regressor for volume prediction; saves weights under `Models/model_3/`.
+- **Models/**: Root folder for all saved model weights, organized by model subfolder.
+- **requirements.txt**: Python dependency list.
+- **README.md**: This overview document.
 
-Pipeline Overview
+## Features
+- End-to-end CIF processing and feature extraction.
+- Augmentation routines for robust model training.
+- Interactive visualizations for exploratory data analysis.
+- Baseline and advanced modeling: classical ML and deep learning.
+- Automated saving of best model weights after training.
 
-Data Preprocessing (data_preprocessing/)
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/crystal-ml-pipeline.git
+   cd crystal-ml-pipeline
 
-Parse Crystallographic Information Files (CIFs) to generate a CSV of file links and metadata.
+2. Create and activate a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate
+   
+3. Install dependencies:
+  ```bash
+  pip install -r requirements.txt
+  ```
+Follow pipeline order:
 
-Extract primary structural parameters:
+# 1) Data preprocessing
+cd data_preprocessing && jupyter lab preprocessing.ipynb
 
-Unit cell dimensions: a, b, c
+# 2) Data augmentation
+cd ../data_augmentation && jupyter lab augmentation.ipynb
 
-Unit cell angles: α, β, γ
+# 3) Data visualization
+cd ../data_visualization && jupyter lab visualization.ipynb
 
-Volume, atomic positions, chemical formula
+# 4) Initial modeling
+cd ../modeling_initial && jupyter lab modeling.ipynb
 
-Compute derived features, e.g., cell anisotropy, axis ratios (b/a, c/a), shape factor
+# 5–8) Deep learning models
+# dl_model_1 → dl_model_2 → dl_model_2_volume → dl_model_3
 
-Output: features.csv containing all engineered features
-
-Data Augmentation (data_augmentation/)
-
-Apply transformations to structural descriptors to increase dataset diversity
-
-Techniques may include random lattice distortions, noise injection, and substructure sampling
-
-Output: augmented feature sets for training robust models
-
-Data Visualization (data_visualization/)
-
-Generate histograms, scatter plots, correlation heatmaps, and KDE plots
-
-Explore relationships between features and target variables (space group, volume)
-
-Save interactive visualizations for reporting
-
-Initial Modeling (modeling_initial/)
-
-Train classical ML classifiers (Decision Tree, Random Forest, SVM, etc.) on preprocessed features
-
-Evaluate using cross-validation and hold-out test sets
-
-Output: baseline metrics and confusion matrices
-
-DL Model 1 (dl_model_1/)
-
-A simple MLP classifier for space group prediction
-
-Implemented in PyTorch, with early stopping and dropout
-
-Saves best model weights in Models/model_1/
-
-DL Model 2 (dl_model_2/)
-
-Advanced MLP with residual blocks or attention mechanisms for improved classification
-
-Saves best model weights in Models/model_2/
-
-DL Model 2 (Volume) (dl_model_2_volume/)
-
-Volume regression using TabNet or deep MLP (logged volume target)
-
-Reports RMSE, MAE, and R² on test set
-
-Saves best model weights in Models/model_2_volume/
-
-DL Model 3 (dl_model_3/)
-
-CRYSPNet-inspired dual-head network for composition-based symmetry classification
-
-Uses Matminer descriptors from chemical formulas
-
-Saves best model weights in Models/model_3/
+After each training run, check the corresponding Models/model_* folder for saved weights.
