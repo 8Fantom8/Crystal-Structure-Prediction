@@ -17,7 +17,7 @@ This project implements a full pipeline for extracting crystallographic features
 8) **DL Model 3**
 
 ## Files and Directories
-- **data_preprocessing/**: Scripts/notebooks to parse CIF links and extract features (unit cell parameters, angles, volume, atomic positions, formula).
+- **data_preprocessing/**: Scripts/notebooks to parse CIF links and extract features (unit cell parameters, angles, volume, atomic positions, formula). The extracted data will be saved in data folder in .csv format under processed_data name
 - **data_augmentation/**: Notebooks for augmenting structural feature sets (lattice distortions, noise injection).
 - **data_visualization/**: Notebooks for plotting histograms, scatter plots, heatmaps, and KDEs.
 - **modeling_initial/**: Classical ML pipelines (Decision Trees, Random Forests, SVM) with baseline metrics.
