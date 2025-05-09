@@ -48,21 +48,22 @@ This project implements a full pipeline for extracting crystallographic features
   ```bash
   pip install -r requirements.txt
   ```
-Follow pipeline order:
 
-# 1) Data preprocessing
+##Follow pipeline order:
+
+### 1) Data preprocessing
 cd data_preprocessing && jupyter lab preprocessing.ipynb
 
-# 2) Data augmentation
+### 2) Data augmentation
 cd ../data_augmentation && jupyter lab augmentation.ipynb
 
-# 3) Data visualization
+### 3) Data visualization
 cd ../data_visualization && jupyter lab visualization.ipynb
 
-# 4) Initial modeling
+### 4) Initial modeling
 cd ../modeling_initial && jupyter lab modeling.ipynb
 
-# 5–8) Deep learning models
-# dl_model_1 → dl_model_2 → dl_model_2_volume → dl_model_3
+### 5–8) Deep learning models
+#### dl_model_1 → dl_model_2 → dl_model_2_volume → dl_model_3
 
 After each training run, check the corresponding Models/model_* folder for saved weights.
